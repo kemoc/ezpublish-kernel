@@ -23,5 +23,12 @@ cd ezplatform
 #    sed -i "s@#                realm: eZ Publish REST API@                realm: eZ Publish REST API@" app/config/security.yml
 #fi
 
+# Insert debugging
+sed '
+/mkdir -p web\/var/ i\
+  echo "> Finished composer install"
+  cat app/logs/dev.log
+' <./bin/.travis/trusty/setup_from_external_repo.sh >./bin/.travis/trusty/setup_from_external_repo.sh
+
 # Install everything needed for behat testing, using our local branch of this repo
 ./bin/.travis/trusty/setup_from_external_repo.sh $BRANCH_BUILD_DIR "ezsystems/ezpublish-kernel:dev-tmp_ci_branch"

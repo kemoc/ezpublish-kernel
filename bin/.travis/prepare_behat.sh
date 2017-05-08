@@ -30,7 +30,7 @@ sed -i '
 ' ./bin/.travis/trusty/setup_from_external_repo.sh
 sed -i '
 /mkdir -p web\/var/ i\
-  cat app/logs/dev.log
+  cat app/logs/prod.log
 ' ./bin/.travis/trusty/setup_from_external_repo.sh
 
 # Install everything needed for behat testing, using our local branch of this repo

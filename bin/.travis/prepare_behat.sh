@@ -27,6 +27,9 @@ cd ezplatform
 sed -i '
 /mkdir -p web\/var/ i\
   echo "> Finished composer install"
+' ./bin/.travis/trusty/setup_from_external_repo.sh
+sed -i '
+/mkdir -p web\/var/ i\
   cat app/logs/dev.log
 ' ./bin/.travis/trusty/setup_from_external_repo.sh
 

@@ -25,11 +25,7 @@ cd ezplatform
 
 # Insert debugging
 sed -i '
-/mkdir -p web\/var/ i\
-  echo "> app/config/parameters.yml: "; cat app/config/parameters.yml
-' ./bin/.travis/trusty/setup_from_external_repo.sh
-sed -i '
-/mkdir -p web\/var/ i\
+/php \/scripts\/wait_for_db.php i\
   echo "> /scripts/wait_for_db.php: "; cat /scripts/wait_for_db.php
 ' ./bin/.travis/trusty/setup_from_external_repo.sh
 

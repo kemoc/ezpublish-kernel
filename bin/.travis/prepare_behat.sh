@@ -26,11 +26,11 @@ cd ezplatform
 # Insert debugging
 sed -i '
 /mkdir -p web\/var/ i\
-  echo "> Finished composer install"
+  echo "> app/config/parameters.yml: "; cat app/config/parameters.yml
 ' ./bin/.travis/trusty/setup_from_external_repo.sh
 sed -i '
 /mkdir -p web\/var/ i\
-  echo "> parameters.yml: "; cat app/config/parameters.yml
+  echo "> /scripts/wait_for_db.php: "; cat /scripts/wait_for_db.php
 ' ./bin/.travis/trusty/setup_from_external_repo.sh
 
 # Install everything needed for behat testing, using our local branch of this repo
